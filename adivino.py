@@ -1,16 +1,16 @@
 import random
-num_aleatorio = random.randrange(100)
+num_aleatorio = random.randrange(101)
 gane = False
-print('Tenes 3 intentos para adivinar un numero entre 0 y 99')
-intento = 0
-while (intento < 5):
+print('Tenes 5 intentos para adivinar un numero entre 0 y 100')
+intentos = 5
+while (intentos > 0):
     num_ingresado = int(input('Ingresa tu numero '))
     if (num_ingresado == num_aleatorio):
-        print('Ganaste! Y necesitaste {} intentos.'.format(intento))
+        print('Ganaste! Y necesitaste {} intentos.'.format(intentos))
         gane = True
     else:
-        print('Numero equivocado. Segui intentando!')
-        intento += 1
+        intentos -= 1
+        print('Numero equivocado. Te quedan {} intentos. Segui intentando!'.format(intentos))
 if not gane:
     print('\nPerdiste! \nEl numero buscado era: {}'.format(num_aleatorio))
         
